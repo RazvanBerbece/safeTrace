@@ -1,0 +1,5 @@
+.DS_STORE
+node_modules/
+local/src/.env
+local/src/Certificates/selfsigned.crt
+local/src/Certificates/selfsigned.key

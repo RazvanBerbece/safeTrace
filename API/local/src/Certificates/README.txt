@@ -1,0 +1,1 @@
+This folder contains the SSL certificates which are used to run a local https, for security purposes.
