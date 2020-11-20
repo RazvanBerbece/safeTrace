@@ -24,20 +24,38 @@ class Authenticator {
         /** Init Firebase App */
         if (!this.firebase.apps.length) {
             this.firebase.initializeApp(this.firebaseConfig);
-         }
+        }
     }
 
     /**
      * Handles signing up on the Firebase Auth platform
      * @param {*} data -> array with two elements : data[0] = email, data[1] = pass
-     * @param {*} callback -> ?
+     * @param {*} callback -> user data or err
      */
     signUp(data, callback) {
         this.firebase.auth().createUserWithEmailAndPassword(data[0], data[1]) // if the user is successfully created, signIn() happens
         .then((user) => {
             // Account created successfully
-            console.log(user);
-            callback(user, null);
+            callback(user.user, null); // user.user holds the UserRecord returned from Firebase
+        })
+        .catch((err) => {
+            var errCode = err.code;
+            var errMsg = err.message;
+            const errors = [errCode, errMsg];
+            callback(null, errors);
+        })
+    }
+
+        /**
+     * Handles signing in on the Firebase Auth platform
+     * @param {*} data -> array with two elements : data[0] = email, data[1] = pass
+     * @param {*} callback -> user data or err
+     */
+    signIn(data, callback) {
+        this.firebase.auth().signInWithEmailAndPassword(data[0], data[1]) // if the user is successfully created, signIn() happens
+        .then((user) => {
+            // Sign in successful
+            callback(user.user, null); // user.user holds the UserRecord returned from Firebase
         })
         .catch((err) => {
             var errCode = err.code;
