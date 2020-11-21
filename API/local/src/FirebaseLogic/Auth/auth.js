@@ -7,36 +7,22 @@ class Authenticator {
 
     /**
      * Configures the Firebase config dictionary so the server can use those functionalities
-     * @param {*} key -> Firebase API key
+     * @param {Obj} fbRef -> Firebase Ref
      */
-    constructor(key) {
-        this.firebase = require('firebase');
-        this.firebaseConfig = {
-            apiKey: key,
-            authDomain: "safetrace-65eb5.firebaseapp.com",
-            databaseURL: "https://safetrace-65eb5.firebaseio.com",
-            projectId: "safetrace-65eb5",
-            storageBucket: "safetrace-65eb5.appspot.com",
-            messagingSenderId: "1056305402171",
-            appId: "1:1056305402171:web:dbac87e8493282ea74671e",
-            measurementId: "G-6TBNVBR1D8"
-          };
-        /** Init Firebase App */
-        if (!this.firebase.apps.length) {
-            this.firebase.initializeApp(this.firebaseConfig);
-        }
+    constructor(fbRef) {
+        this.firebase = fbRef;
     }
 
     /**
      * Handles signing up on the Firebase Auth platform
-     * @param {*} data -> array with two elements : data[0] = email, data[1] = pass
-     * @param {*} callback -> user data or err
+     * @param {[string]} data -> array with two elements : data[0] = email, data[1] = pass
+     * @param {callback} callback -> user data or err
      */
     signUp(data, callback) {
         this.firebase.auth().createUserWithEmailAndPassword(data[0], data[1]) // if the user is successfully created, signIn() happens
         .then((user) => {
             // Account created successfully
-            callback(user.user, null); // user.user holds the UserRecord returned from Firebase
+            callback([user.user.uid, user.user.email, []], null); // user.user holds the UserRecord returned from Firebase
         })
         .catch((err) => {
             var errCode = err.code;
@@ -48,14 +34,15 @@ class Authenticator {
 
         /**
      * Handles signing in on the Firebase Auth platform
-     * @param {*} data -> array with two elements : data[0] = email, data[1] = pass
-     * @param {*} callback -> user data or err
+     * @param {[string]} data -> array with two elements : data[0] = email, data[1] = pass
+     * @param {callback} callback -> user data or err
      */
     signIn(data, callback) {
         this.firebase.auth().signInWithEmailAndPassword(data[0], data[1]) // if the user is successfully created, signIn() happens
         .then((user) => {
             // Sign in successful
-            callback(user.user, null); // user.user holds the UserRecord returned from Firebase
+            // this should return the current location on sign in (TODO)
+            callback([user.user.uid, user.user.email, []], null); // user.user holds the UserRecord returned from Firebase
         })
         .catch((err) => {
             var errCode = err.code;
