@@ -11,7 +11,7 @@
      * Configures the Firebase config dictionary so the server can use those functionalities
      * @param {[string, string]} location -> current location which has to be posted (longitude, latitude)
      * @param {Obj} fbRef -> Firebase Ref
-     * @param {[]} user -> Current app user
+     * @param {string} uid -> Current user uid
      */
     constructor(location, fbRef, uid) {
         this.location = location;
@@ -43,6 +43,7 @@
         var locationRef = database.ref('users/' + this.uid + '/location');
         locationRef.on('value', (snapshot) => {
             const data = snapshot.val();
+            console.log(data);
             callback(data);
         })
     }
