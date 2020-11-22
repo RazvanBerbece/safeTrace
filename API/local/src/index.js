@@ -154,7 +154,7 @@ app.post('/signup', (req, res) => { // Handles a sign up POST call
 
 });
 
-app.post('/savelocation', (req, res) => { // Handles a sign up POST call
+app.post('/savelocation', (req, res) => { // Handles a location POST call
 
     const longitude = req.body.longitude;
     const latitude = req.body.latitude;
@@ -169,6 +169,31 @@ app.post('/savelocation', (req, res) => { // Handles a sign up POST call
             "data": {
                 "uid": `${uid}`,
                 "location": [longitude, latitude]
+            }
+        });
+    })
+
+    /** 
+     * TODO: AFTER UPLOAD, SERVER SHOULD CHECK ALL DATABASE RECORDS IN THE NEARBY VICINITY OF THE LOCATION 
+     * AND SEND NOTIFICATIONS IF NEEDED
+    */
+
+});
+
+app.post('/getlocation', (req, res) => { // Handles a location GET call
+
+    const uid = req.body.uid;
+
+    /** TODO: GET USER WITH UID */
+
+    const locationHandler = new LocationHandlerImport([], firebase, uid); // last param should be the user
+    locationHandler.getLocation((data) => {
+        console.log(data);
+        res.status(StatusCodes.SUCCESS).json({
+            "transcationID": Transactions.UPLOAD_LOC,
+            "data": {
+                "uid": `${uid}`,
+                "location": data
             }
         });
     })
