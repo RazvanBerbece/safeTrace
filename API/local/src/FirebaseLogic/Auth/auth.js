@@ -32,7 +32,7 @@ class Authenticator {
         })
     }
 
-        /**
+    /**
      * Handles signing in on the Firebase Auth platform
      * @param {[string]} data -> array with two elements : data[0] = email, data[1] = pass
      * @param {callback} callback -> user data or err
