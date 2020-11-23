@@ -26,6 +26,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var currentLocationLongitude: UILabel!
     @IBOutlet weak var currentLocationLatitude: UILabel!
     @IBOutlet weak var counterLabel: UILabel!
+    @IBOutlet weak var uploadResultLabel: UILabel!
     
     @IBOutlet weak var pushLocationButton: UIButton!
     
@@ -43,6 +44,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             if (!failed) {
                 self.counterLabel.text = "There are \(counter) people in this area"
                 print(sendAlert)
+                self.uploadResultLabel.text = "Upload successful !"
             }
             else {
                 print("Error occured while uploading location.")
