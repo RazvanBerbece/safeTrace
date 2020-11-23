@@ -47,6 +47,8 @@ const Transactions = { // represents the various actions that a user can do
 
 /** ------------------- FIREBASE GLOBAL INIT ------------------- */
 const firebase = require('firebase');
+const { resolve } = require('path');
+const { send } = require('process');
 const firebaseConfig = {
     apiKey: process.env.FIREBASE_API_KEY,
     authDomain: "safetrace-65eb5.firebaseapp.com",
@@ -160,59 +162,58 @@ app.post('/savelocation', (req, res) => { // Handles a location POST call
     const latitude = req.body.latitude;
     const uid = req.body.uid;
 
-    /** TODO: GET USER WITH UID */
-
     const locationHandler = new LocationHandlerImport([longitude, latitude], firebase, uid); // last param should be the user
-    locationHandler.saveLocation(() => {
+    const uploadLocationMetrics = () => {
+        return new Promise((resolve, reject) => {
+            locationHandler.uploadLocationMetrics((counter, sendAlert, failed) => {
+                if (failed) { // no user returned means that signUp failed
+                    return reject(failed);
+                }
+                // success
+                resolve(counter, sendAlert);
+            });
+        })
+    }
+
+    uploadLocationMetrics()
+    .then((counter, sendAlert) => {
+        console.log(`Main thread : ${sendAlert}`)
+        // send info response
         res.status(StatusCodes.SUCCESS).json({
             "transcationID": Transactions.UPLOAD_LOC,
             "data": {
-                "uid": `${uid}`,
-                "location": [longitude, latitude]
+                "counter": `${counter}`,
+                "alert": sendAlert ? 1 : 0
             }
-        });
-    })
-
-    /** 
-     * TODO: AFTER UPLOAD, SERVER SHOULD CHECK ALL DATABASE RECORDS IN THE NEARBY VICINITY OF THE LOCATION 
-     * AND SEND NOTIFICATIONS IF NEEDED
-    */
-
-});
-
-app.post('/getlocation', (req, res) => { // Handles a location GET call
-
-    const uid = req.body.uid;
-
-    /** TODO: GET USER WITH UID */
-
-    const locationHandler = new LocationHandlerImport([], firebase, uid); // last param should be the user
-    locationHandler.getLocation((data) => {
-        console.log(data);
-        res.status(StatusCodes.SUCCESS).json({
+        });        
+    }) 
+    .catch((failed) => {
+        // send err response
+        res.status(StatusCodes.SERVER_ERR).json({
             "transcationID": Transactions.UPLOAD_LOC,
             "data": {
-                "uid": `${uid}`,
-                "location": data
+                "err": '-1'
             }
-        });
+        });        
     })
-
-    /** 
-     * TODO: AFTER UPLOAD, SERVER SHOULD CHECK ALL DATABASE RECORDS IN THE NEARBY VICINITY OF THE LOCATION 
-     * AND SEND NOTIFICATIONS IF NEEDED
-    */
 
 });
 
 /** ------------------- HTTPS SERVER INIT ------------------- */
+/*
 const options = {
     key: fs.readFileSync('./Certificates/selfsigned.key'),
     cert: fs.readFileSync('./Certificates/selfsigned.crt')
 };
 var server = https.createServer(options, app);
+*/
 
 /** ------------------- LISTENER ------------------- */
+/*
 server.listen(port, () => {
+    console.log(`Server listening on ${port} ...`);
+});
+*/
+app.listen(port, () => {
     console.log(`Server listening on ${port} ...`);
 });

@@ -1,0 +1,6 @@
+framework module Pods_safeTraceClient {
+  umbrella header "Pods-safeTraceClient-umbrella.h"
+
+  export *
+  module * { export * }
+}
