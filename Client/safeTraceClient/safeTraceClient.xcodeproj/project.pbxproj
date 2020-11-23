@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		6F6AE943256AE97E0030B452 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6AE942256AE97E0030B452 /* User.swift */; };
 		6F6AE947256B00B60030B452 /* CurrentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6AE946256B00B60030B452 /* CurrentLocation.swift */; };
+		6FBBCD7B256BD7B500D4A221 /* safeTraceClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBBCD7A256BD7B500D4A221 /* safeTraceClientTests.swift */; };
+		6FBBCD87256BD7DC00D4A221 /* safeTraceClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBBCD86256BD7DC00D4A221 /* safeTraceClientTest.swift */; };
+		6FBBCD8A256BD87500D4A221 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDF1EB1256AD49200A44B2B /* Client.swift */; };
+		6FBBCD8D256BD8B400D4A221 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6AE942256AE97E0030B452 /* User.swift */; };
+		6FBBCD9C256BDA4B00D4A221 /* CurrentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6AE946256B00B60030B452 /* CurrentLocation.swift */; };
 		6FDF1E9B256AD3F500A44B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDF1E9A256AD3F500A44B2B /* AppDelegate.swift */; };
 		6FDF1E9D256AD3F500A44B2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDF1E9C256AD3F500A44B2B /* SceneDelegate.swift */; };
 		6FDF1E9F256AD3F500A44B2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDF1E9E256AD3F500A44B2B /* ViewController.swift */; };
@@ -16,14 +21,32 @@
 		6FDF1EA4256AD3F600A44B2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FDF1EA3256AD3F600A44B2B /* Assets.xcassets */; };
 		6FDF1EA7256AD3F600A44B2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FDF1EA5256AD3F600A44B2B /* LaunchScreen.storyboard */; };
 		6FDF1EB2256AD49200A44B2B /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDF1EB1256AD49200A44B2B /* Client.swift */; };
+		910C288CA2D6DED56BB82417 /* Pods_safeTraceClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2386E0C20B47311AA8CCB05D /* Pods_safeTraceClientTests.framework */; };
 		98FB4F679EA52D4EC515E7D3 /* Pods_safeTraceClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6102C3F92A49CB61F33758 /* Pods_safeTraceClient.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6FBBCD7D256BD7B500D4A221 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FDF1E8F256AD3F500A44B2B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FDF1E96256AD3F500A44B2B;
+			remoteInfo = safeTraceClient;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		01D65137D2D2D573212AB8DC /* Pods-safeTraceClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-safeTraceClientTests.debug.xcconfig"; path = "Target Support Files/Pods-safeTraceClientTests/Pods-safeTraceClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0A824D005AEF12963FF76786 /* Pods-safeTraceClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-safeTraceClient.debug.xcconfig"; path = "Target Support Files/Pods-safeTraceClient/Pods-safeTraceClient.debug.xcconfig"; sourceTree = "<group>"; };
+		2386E0C20B47311AA8CCB05D /* Pods_safeTraceClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_safeTraceClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2848785B0F3A524888CFE5D6 /* Pods-safeTraceClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-safeTraceClient.release.xcconfig"; path = "Target Support Files/Pods-safeTraceClient/Pods-safeTraceClient.release.xcconfig"; sourceTree = "<group>"; };
+		4D1BB0DCF866E39805D24A89 /* Pods-safeTraceClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-safeTraceClientTests.release.xcconfig"; path = "Target Support Files/Pods-safeTraceClientTests/Pods-safeTraceClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		6F6AE942256AE97E0030B452 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6F6AE946256B00B60030B452 /* CurrentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocation.swift; sourceTree = "<group>"; };
+		6FBBCD78256BD7B500D4A221 /* safeTraceClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = safeTraceClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FBBCD7A256BD7B500D4A221 /* safeTraceClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = safeTraceClientTests.swift; sourceTree = "<group>"; };
+		6FBBCD7C256BD7B500D4A221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FBBCD86256BD7DC00D4A221 /* safeTraceClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = safeTraceClientTest.swift; sourceTree = "<group>"; };
 		6FDF1E97256AD3F500A44B2B /* safeTraceClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = safeTraceClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FDF1E9A256AD3F500A44B2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FDF1E9C256AD3F500A44B2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +60,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6FBBCD75256BD7B500D4A221 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				910C288CA2D6DED56BB82417 /* Pods_safeTraceClientTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6FDF1E94256AD3F500A44B2B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -52,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				CB6102C3F92A49CB61F33758 /* Pods_safeTraceClient.framework */,
+				2386E0C20B47311AA8CCB05D /* Pods_safeTraceClientTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -64,10 +96,28 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		6FBBCD6B256BD6F500D4A221 /* UnitTesting */ = {
+			isa = PBXGroup;
+			children = (
+				6FBBCD86256BD7DC00D4A221 /* safeTraceClientTest.swift */,
+			);
+			path = UnitTesting;
+			sourceTree = "<group>";
+		};
+		6FBBCD79256BD7B500D4A221 /* safeTraceClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				6FBBCD7A256BD7B500D4A221 /* safeTraceClientTests.swift */,
+				6FBBCD7C256BD7B500D4A221 /* Info.plist */,
+			);
+			path = safeTraceClientTests;
+			sourceTree = "<group>";
+		};
 		6FDF1E8E256AD3F400A44B2B = {
 			isa = PBXGroup;
 			children = (
 				6FDF1E99256AD3F500A44B2B /* safeTraceClient */,
+				6FBBCD79256BD7B500D4A221 /* safeTraceClientTests */,
 				6FDF1E98256AD3F500A44B2B /* Products */,
 				A4C2F368D6D2FDBB4B65279E /* Pods */,
 				62E7E61425B5D2DC615CE81E /* Frameworks */,
@@ -78,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				6FDF1E97256AD3F500A44B2B /* safeTraceClient.app */,
+				6FBBCD78256BD7B500D4A221 /* safeTraceClientTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +136,7 @@
 		6FDF1E99256AD3F500A44B2B /* safeTraceClient */ = {
 			isa = PBXGroup;
 			children = (
+				6FBBCD6B256BD6F500D4A221 /* UnitTesting */,
 				6F6AE941256AE9740030B452 /* User */,
 				6FDF1EB0256AD41800A44B2B /* Location */,
 				6FDF1EAF256AD41100A44B2B /* Client */,
@@ -120,6 +172,8 @@
 			children = (
 				0A824D005AEF12963FF76786 /* Pods-safeTraceClient.debug.xcconfig */,
 				2848785B0F3A524888CFE5D6 /* Pods-safeTraceClient.release.xcconfig */,
+				01D65137D2D2D573212AB8DC /* Pods-safeTraceClientTests.debug.xcconfig */,
+				4D1BB0DCF866E39805D24A89 /* Pods-safeTraceClientTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -127,6 +181,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6FBBCD77256BD7B500D4A221 /* safeTraceClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FBBCD7F256BD7B500D4A221 /* Build configuration list for PBXNativeTarget "safeTraceClientTests" */;
+			buildPhases = (
+				2F4D0A68902A44FBB5E850E3 /* [CP] Check Pods Manifest.lock */,
+				6FBBCD74256BD7B500D4A221 /* Sources */,
+				6FBBCD75256BD7B500D4A221 /* Frameworks */,
+				6FBBCD76256BD7B500D4A221 /* Resources */,
+				FB3E186B831C5FC91C79D310 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6FBBCD7E256BD7B500D4A221 /* PBXTargetDependency */,
+			);
+			name = safeTraceClientTests;
+			productName = safeTraceClientTests;
+			productReference = 6FBBCD78256BD7B500D4A221 /* safeTraceClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6FDF1E96256AD3F500A44B2B /* safeTraceClient */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6FDF1EAB256AD3F600A44B2B /* Build configuration list for PBXNativeTarget "safeTraceClient" */;
@@ -155,6 +229,10 @@
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
+					6FBBCD77256BD7B500D4A221 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 6FDF1E96256AD3F500A44B2B;
+					};
 					6FDF1E96256AD3F500A44B2B = {
 						CreatedOnToolsVersion = 12.2;
 					};
@@ -174,11 +252,19 @@
 			projectRoot = "";
 			targets = (
 				6FDF1E96256AD3F500A44B2B /* safeTraceClient */,
+				6FBBCD77256BD7B500D4A221 /* safeTraceClientTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6FBBCD76256BD7B500D4A221 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6FDF1E95256AD3F500A44B2B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -192,6 +278,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2F4D0A68902A44FBB5E850E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-safeTraceClientTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5A662B44688E062BB839086D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -231,9 +339,38 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-safeTraceClient/Pods-safeTraceClient-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FB3E186B831C5FC91C79D310 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-safeTraceClientTests/Pods-safeTraceClientTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-safeTraceClientTests/Pods-safeTraceClientTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-safeTraceClientTests/Pods-safeTraceClientTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6FBBCD74256BD7B500D4A221 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FBBCD8D256BD8B400D4A221 /* User.swift in Sources */,
+				6FBBCD7B256BD7B500D4A221 /* safeTraceClientTests.swift in Sources */,
+				6FBBCD87256BD7DC00D4A221 /* safeTraceClientTest.swift in Sources */,
+				6FBBCD9C256BDA4B00D4A221 /* CurrentLocation.swift in Sources */,
+				6FBBCD8A256BD87500D4A221 /* Client.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6FDF1E93256AD3F500A44B2B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -248,6 +385,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6FBBCD7E256BD7B500D4A221 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6FDF1E96256AD3F500A44B2B /* safeTraceClient */;
+			targetProxy = 6FBBCD7D256BD7B500D4A221 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6FDF1EA0256AD3F500A44B2B /* Main.storyboard */ = {
@@ -269,6 +414,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6FBBCD80256BD7B500D4A221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01D65137D2D2D573212AB8DC /* Pods-safeTraceClientTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8VHF8L87K3;
+				INFOPLIST_FILE = safeTraceClientTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RB.safeTraceClientTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/safeTraceClient.app/safeTraceClient";
+			};
+			name = Debug;
+		};
+		6FBBCD81256BD7B500D4A221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D1BB0DCF866E39805D24A89 /* Pods-safeTraceClientTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8VHF8L87K3;
+				INFOPLIST_FILE = safeTraceClientTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RB.safeTraceClientTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/safeTraceClient.app/safeTraceClient";
+			};
+			name = Release;
+		};
 		6FDF1EA9256AD3F600A44B2B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -428,6 +615,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6FBBCD7F256BD7B500D4A221 /* Build configuration list for PBXNativeTarget "safeTraceClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FBBCD80256BD7B500D4A221 /* Debug */,
+				6FBBCD81256BD7B500D4A221 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6FDF1E92256AD3F500A44B2B /* Build configuration list for PBXProject "safeTraceClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

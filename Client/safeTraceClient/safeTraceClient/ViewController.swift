@@ -32,7 +32,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func signIn_press() {
         self.client!.signIn(email: self.emailInput.text!, pass: self.passInput.text!) {
             (user) in
-            print(user.getEmail())
             self.uidLabel.text = "Hello, \(user.getUID())"
             self.currentUser = user
             self.pushLocationButton.isHidden = false
