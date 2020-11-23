@@ -26,13 +26,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var currentLocationLongitude: UILabel!
     @IBOutlet weak var currentLocationLatitude: UILabel!
     @IBOutlet weak var counterLabel: UILabel!
+    @IBOutlet weak var uploadResultLabel: UILabel!
     
     @IBOutlet weak var pushLocationButton: UIButton!
     
     @IBAction func signIn_press() {
         self.client!.signIn(email: self.emailInput.text!, pass: self.passInput.text!) {
             (user) in
-            print(user.getEmail())
             self.uidLabel.text = "Hello, \(user.getUID())"
             self.currentUser = user
             self.pushLocationButton.isHidden = false
@@ -44,6 +44,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             if (!failed) {
                 self.counterLabel.text = "There are \(counter) people in this area"
                 print(sendAlert)
+                self.uploadResultLabel.text = "Upload successful !"
             }
             else {
                 print("Error occured while uploading location.")

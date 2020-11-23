@@ -47,8 +47,31 @@ class Client {
             }
     }
     
-    public func signUp(email: String, pass: String, owner: Bool) {
-        // TODO
+    public func signUp(email: String, pass: String, owner: Bool, callback: @escaping (User) -> Void) {
+        AF.request(
+            self.initialURL + "/signup",
+            method: .post,
+            parameters: Login(email: email, pass: pass),
+            encoder: JSONParameterEncoder.default).responseJSON { (response) in
+                switch response.result {
+                case .success:
+                    let data = response.data
+                    let jsonString = String(data: data!, encoding: .utf8)
+                    let jsonData = jsonString!.data(using: .utf8)
+                    if let jsonResult = try? JSON(data: jsonData!) {
+                        print(jsonResult)
+                        let uidString = String(describing: jsonResult["data"]["uid"])
+                        let emailString = String(describing: jsonResult["data"]["email"])
+                        _ = jsonResult["data"]["locations"][0]
+                        let user : User = User(uid: uidString, email: emailString, locations: [])
+                        callback(user)
+                    }
+                case .failure(let err):
+                    print(err)
+                    let user : User = User(uid: "-1", email: "-1", locations: ["-1"])
+                    callback(user)
+                }
+            }
     }
     
     public func signIn(email: String, pass: String, callback: @escaping (User) -> Void) {
