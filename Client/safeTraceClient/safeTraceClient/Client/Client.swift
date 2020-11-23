@@ -78,7 +78,7 @@ class Client {
             }
     }
     
-    public func uploadLocation(uid: String, location: Location, callback: @escaping (String, Bool, Bool) -> Void) {
+    public func uploadLocation(uid: String, location: Location, callback: @escaping (String, String, Bool) -> Void) {
         AF.request(
             self.initialURL + "/savelocation",
             method: .post,
@@ -91,11 +91,11 @@ class Client {
                     let jsonData = jsonString!.data(using: .utf8)
                     if let jsonResult = try? JSON(data: jsonData!) {
                         print(jsonResult)
-                        callback(String(describing: jsonResult["data"]["counter"]), jsonResult["data"]["alert"], false)
+                        callback(String(describing: jsonResult["data"]["counter"]), String(describing: jsonResult["data"]["alert"]), false)
                     }
                 case .failure(let err):
                     print(err)
-                    callback("0", false, true)
+                    callback("0", "-1", true)
                 }
             }
     }

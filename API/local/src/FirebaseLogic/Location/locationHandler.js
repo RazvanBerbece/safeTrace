@@ -37,12 +37,12 @@ const LocationAnalysis = require('./locationAnalysis');
         refCoordinateLink[1] = refCoordinateLink[1].toString().replace('.', '');
 
         var database = this.firebase.database();
-        var locationsUsersRef = database.ref('locations/' + `${refCoordinateLink[0]}` + `${refCoordinateLink[1]}` + '/users')
+        var locationsUsersRef = database.ref('locations/' + `${refCoordinateLink[0]}` + `${refCoordinateLink[1]}` + '/users');
         locationsUsersRef.push({
             uid: this.uid,
             risk: false
         });
-        var locationsAlertRef = database.ref('locations/' + `${refCoordinateLink[0]}` + `${refCoordinateLink[1]}` + '/alert')
+        var locationsAlertRef = database.ref('locations/' + `${refCoordinateLink[0]}` + `${refCoordinateLink[1]}` + '/alert');
         locationsAlertRef.set({
             alert: false
         });
@@ -72,7 +72,7 @@ const LocationAnalysis = require('./locationAnalysis');
         }
 
         getLocationMetrics()
-        .then(async (data) => {
+        .then((data) => {
             countUsers(data)
             .then((result) => {
                 callback(result[0], result[1], false); 
